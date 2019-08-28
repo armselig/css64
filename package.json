@@ -1,0 +1,37 @@
+{
+  "name": "web-c64",
+  "version": "0.1.0",
+  "description": "Web template for page with C64 look",
+  "main": "index.js",
+  "scripts": {
+    "clean:dist": "rimraf ./dist/",
+    "predev": "npm run clean:dist",
+    "dev": "parcel ./src/index.html",
+    "prebuild": "npm run clean:dist",
+    "build": "parcel build ./src/index.html"
+  },
+  "keywords": [
+    "webdev",
+    "html",
+    "css",
+    "c64"
+  ],
+  "author": "Hendrik Neumann <henne@armselig.net>",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armselig/web-c64.git"
+  },
+  "bugs": {
+    "url": "https://github.com/armselig/web-c64/issues"
+  },
+  "homepage": "https://github.com/armselig/web-c64#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3",
+    "rimraf": "^3.0.0",
+    "sass": "^1.22.10"
+  },
+  "dependencies": {
+    "reset-css": "^4.0.1"
+  }
+}

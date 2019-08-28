@@ -1,0 +1,14 @@
+.c64 {
+
+    &__frame {
+        background-color: $color__blue--light;
+        padding: 8rem;
+    }
+
+    &__screen {
+        // overflow: hidden;
+        padding: $spacing__md;
+        background-color: $color__blue;
+    }
+
+}

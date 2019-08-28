@@ -1,0 +1,19 @@
+/*** BASE STYLES ***************************************************/ 
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    z-index: 0;
+}
+
+body {
+    text-overflow: ellipsis;
+}
+
+img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    // max-height: 80vh;
+}
