@@ -21,6 +21,10 @@
         background-color: $color__blue--light;
         box-shadow: 0 0.4rem 1.6rem $color__grey--light;
         padding: 8rem;
+
+        &:hover {
+            padding: 0;
+        }
     }
 
     &__screen {
