@@ -1,14 +1,37 @@
+/*** CSS64 *********************************************************/ 
+
+@font-face {
+    // C64 font from https://style64.org/release/c64-truetype-v1.2.1-style
+    font-family: 'C64';
+    src: url('../fnt/C64_Pro-STYLE.woff2') format('woff2'),
+        url('../fnt/C64_Pro-STYLE.woff') format('woff'),
+        url('../fnt/C64_Pro-STYLE.eot') format('embedded-opentype'),
+        url('../fnt/C64_Pro-STYLE.otf') format('opentype'),
+        url('../fnt/C64_Pro-STYLE.ttf') format('truetype');
+    font-display: swap;
+    font-weight: 900;
+}
+
 .c64 {
+    font-family: C64, $font__family--mono;
+    color: $color__white;
 
     &__frame {
+        border-radius: 2.4rem;
         background-color: $color__blue--light;
+        box-shadow: 0 0.4rem 1.6rem $color__grey--light;
         padding: 8rem;
     }
 
     &__screen {
-        // overflow: hidden;
+        max-height: 100%;
+        overflow: auto;
         padding: $spacing__md;
         background-color: $color__blue;
     }
 
+    &--full &__frame {
+        height: 100vh;
+        border-radius: 0;
+    }
 }
