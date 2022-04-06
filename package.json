@@ -10,7 +10,8 @@
     "dev": "parcel ./src/index.html",
     "prebuild": "run-p clean:cache clean:dist",
     "build": "parcel build ./src/index.html",
-    "predeploy": "run-p build clean:docs",
+    "build:github": "parcel build ./src/index.html --public-url https://armselig.github.io/css64/",
+    "predeploy": "run-p build:github clean:docs",
     "deploy": "cp -R ./dist ./docs && git add ./docs/. && git commit -m \"ci(github): deploy to github pages\" && git push"
   },
   "keywords": [
