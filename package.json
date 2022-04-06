@@ -5,10 +5,13 @@
   "scripts": {
     "clean:cache": "rimraf ./.parcel-cache",
     "clean:dist": "rimraf ./dist",
-    "predev": "run-p clean:*",
+    "clean:docs": "rimraf ./docs",
+    "predev": "run-p clean:dist",
     "dev": "parcel ./src/index.html",
-    "prebuild": "run-p clean:*",
-    "build": "parcel build ./src/index.html"
+    "prebuild": "run-p clean:cache clean:dist",
+    "build": "parcel build ./src/index.html",
+    "predeploy": "run-p build clean:docs",
+    "deploy": "cp -R ./dist ./docs && git add ./docs/. && git commit -m \"ci(github): deploy to github pages\" && git push"
   },
   "keywords": [
     "css",
