@@ -1,0 +1,22 @@
+/**
+ * Base styles
+ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  text-overflow: ellipsis;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}

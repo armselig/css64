@@ -1,0 +1,95 @@
+/**
+ * LOAD"CSS64",8,1
+ */
+
+// COLORS
+$colors--real: (
+  "black": "#000",
+  "blue--light": "#6c5eb5",
+  "blue": "#352879",
+  "brown": "#433900",
+  "cyan": "#70a4b2",
+  "green--light": "#9ad284",
+  "green": "#588d43",
+  "grey--dark": "#444",
+  "grey--light": "#959595",
+  "grey": "#6c6c6c",
+  "orange": "#6f4f25",
+  "purple": "#6f3d86",
+  "red--light": "#9a6759",
+  "red": "#68372b",
+  "white": "#fff",
+  "yellow": "#b8c76f",
+);
+
+$colors--clean: (
+  "black": "#000",
+  "blue--light": "#0088ff",
+  "blue": "#0000aa",
+  "brown": "#664400",
+  "cyan": "#aaffee",
+  "green--light": "#aaff66",
+  "green": "#00cc55",
+  "grey--dark": "#333333",
+  "grey--light": "#bbb",
+  "grey": "#777777",
+  "orange": "#dd8855",
+  "purple": "#cc44cc",
+  "red--light": "#ff7777",
+  "red": "#880000",
+  "white": #fff,
+  "yellow": "#eeee77",
+);
+
+:root {
+  // Replace $colors--real with $colors--clean to switch theme
+  @each $name, $color in $colors--real {
+    --color-#{$name}: #{$color};
+  }
+}
+
+// FONT
+@font-face {
+  font-family: "C64";
+  src: url("../fnt/C64_Pro-STYLE.woff2") format("woff2"),
+    url("../fnt/C64_Pro-STYLE.woff") format("woff"),
+    url("../fnt/C64_Pro-STYLE.eot") format("embedded-opentype"),
+    url("../fnt/C64_Pro-STYLE.otf") format("opentype"),
+    url("../fnt/C64_Pro-STYLE.ttf") format("truetype");
+  font-display: swap;
+  font-weight: 900;
+}
+
+// STYLES
+.css64 {
+  font-family: C64, $font__family--mono;
+  color: var(--color-white);
+
+  &__frame {
+    border-radius: 2.4rem;
+    background-color: var(--color-blue--light);
+    box-shadow: 0 0.4rem 1.6rem var(--color-grey--light);
+    padding: 8rem;
+  }
+
+  &__screen {
+    max-height: 100%;
+    overflow: auto;
+    padding: 1.6rem;
+    background-color: var(--color-blue);
+  }
+
+  &--full &__frame {
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .link {
+    color: var(--color-green);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--color-blue--light);
+    }
+  }
+}

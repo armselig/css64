@@ -5,9 +5,9 @@
   "scripts": {
     "clean:cache": "rimraf ./.parcel-cache",
     "clean:dist": "rimraf ./dist",
-    "predev": "npm run clean:dist",
+    "predev": "run-p clean:*",
     "dev": "parcel ./src/index.html",
-    "prebuild": "npm run clean:dist",
+    "prebuild": "run-p clean:*",
     "build": "parcel build ./src/index.html"
   },
   "keywords": [
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/armselig/css64#readme",
   "devDependencies": {
     "@parcel/transformer-sass": "^2.4.1",
+    "npm-run-all": "^4.1.5",
     "parcel": "^2.4.1",
     "rimraf": "^3.0.0",
     "sass": "^1.49.11"
