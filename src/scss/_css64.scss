@@ -2,6 +2,15 @@
  * LOAD"CSS64",8,1
  */
 
+// PLACEHOLDER
+%cursor {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  animation: cursor-blink 0.7s steps(2) infinite;
+}
+
 // COLORS
 $colors--real: (
   "black": "#000",
@@ -62,8 +71,14 @@ $colors--clean: (
 
 // STYLES
 .css64 {
-  font-family: C64, $font__family--mono;
-  color: var(--color-white);
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: C64, $font__family--mono;
+  }
+
+  color: var(--color-blue--light);
+  line-height: 1.2;
 
   &__frame {
     border-radius: 2.4rem;
@@ -75,13 +90,35 @@ $colors--clean: (
   &__screen {
     max-height: 100%;
     overflow: auto;
-    padding: 1.6rem;
+    padding: 1.6rem 0;
     background-color: var(--color-blue);
   }
 
-  &--full &__frame {
-    height: 100vh;
-    border-radius: 0;
+  &--full {
+    .css64__frame {
+      height: 100vh;
+      border-radius: 0;
+    }
+
+    .css64__screen {
+      height: 100%;
+    }
+  }
+
+  &__cursor {
+    @extend %cursor;
+  }
+
+  h1,
+  h2,
+  p {
+    padding: 0 4px;
+  }
+
+  h1 {
+    color: var(--color-white);
+    font-size: inherit;
+    text-align: center;
   }
 
   .link {
@@ -91,5 +128,12 @@ $colors--clean: (
     &:hover {
       color: var(--color-blue--light);
     }
+  }
+}
+
+// ANIMATION
+@keyframes cursor-blink {
+  0% {
+    opacity: 0;
   }
 }
