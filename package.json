@@ -1,37 +1,40 @@
 {
-  "name": "web-c64",
+  "name": "css64",
   "version": "0.1.0",
-  "description": "Web template for page with C64 look",
-  "main": "index.js",
+  "description": "Get that oldschool C64 look!",
   "scripts": {
-    "clean:dist": "rimraf ./dist/",
+    "clean:cache": "rimraf ./.parcel-cache",
+    "clean:dist": "rimraf ./dist",
     "predev": "npm run clean:dist",
     "dev": "parcel ./src/index.html",
     "prebuild": "npm run clean:dist",
     "build": "parcel build ./src/index.html"
   },
   "keywords": [
-    "webdev",
-    "html",
     "css",
-    "c64"
+    "c64",
+    "scss",
+    "retrocomputing"
   ],
   "author": "Hendrik Neumann <henne@armselig.net>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/armselig/web-c64.git"
+    "url": "git+https://github.com/armselig/css64.git"
   },
-  "bugs": {
-    "url": "https://github.com/armselig/web-c64/issues"
-  },
-  "homepage": "https://github.com/armselig/web-c64#readme",
+  "homepage": "https://github.com/armselig/css64#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
+    "@parcel/transformer-sass": "^2.4.1",
+    "parcel": "^2.4.1",
     "rimraf": "^3.0.0",
-    "sass": "^1.22.10"
+    "sass": "^1.49.11"
   },
-  "dependencies": {
-    "reset-css": "^4.0.1"
+  "overrides": {
+    "@parcel/optimizer-htmlnano": {
+      "htmlnano@2.0.1": "2.0.0"
+    }
+  },
+  "engines": {
+    "npm": "^8.3.0"
   }
 }
