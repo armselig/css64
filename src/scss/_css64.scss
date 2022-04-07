@@ -71,26 +71,20 @@ $colors--clean: (
 
 // STYLES
 .css64 {
-  * {
-    padding: 0;
-    margin: 0;
-    font-family: C64, $font__family--mono;
-  }
-
   color: var(--color-blue--light);
-  line-height: 1.2;
+  font-family: C64, $font__family--mono;
 
   &__frame {
-    border-radius: 2.4rem;
+    border-radius: 4vw;
     background-color: var(--color-blue--light);
     box-shadow: 0 0.4rem 1.6rem var(--color-grey--light);
-    padding: 8rem;
+    padding: 8vw;
   }
 
   &__screen {
     max-height: 100%;
     overflow: auto;
-    padding: 1.6rem 0;
+    padding: 1.6rem 4px;
     background-color: var(--color-blue);
   }
 
@@ -109,16 +103,20 @@ $colors--clean: (
     @extend %cursor;
   }
 
-  h1,
-  h2,
-  p {
-    padding: 0 4px;
-  }
-
   h1 {
     color: var(--color-white);
     font-size: inherit;
-    text-align: center;
+  }
+
+  .cursor {
+    position: relative;
+
+    &::after {
+      @extend %cursor;
+
+      content: "";
+      position: absolute;
+    }
   }
 
   .link {
